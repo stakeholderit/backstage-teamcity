@@ -1,5 +1,5 @@
 {
-  "name": "backstage-plugin-teamcity",
+  "name": "@stakeholderit/backstage-plugin-teamcity",
   "version": "1.0.4",
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -16,7 +16,7 @@
   "homepage": "https://github.com/stakeholderit/backstage-teamcity",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stakeholderit/backstage-teamcity"
+    "url": "git+https://github.com/stakeholderit/backstage-teamcity.git"
   },
   "keywords": [
     "backstage",
@@ -70,5 +70,10 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "description": "Welcome to the teamcity plugin for Backstage!",
+  "author": "@stakeholderit",
+  "bugs": {
+    "url": "https://github.com/stakeholderit/backstage-teamcity/issues"
+  }
 }
