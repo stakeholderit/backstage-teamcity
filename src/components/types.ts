@@ -16,8 +16,6 @@ export type BuildCollection = {
 export type BuildType = {
   id: string;
   name: string;
-  projectId: string;
-  projectName: string;
   status?: string;
   webUrl: string;
   builds: {
