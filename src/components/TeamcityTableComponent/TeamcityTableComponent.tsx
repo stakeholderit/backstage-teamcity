@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Table, TableColumn, Progress } from '@backstage/core-components';
 import Alert from '@material-ui/lab/Alert';
 import useAsync from 'react-use/lib/useAsync';
-import { useApi, configApiRef, useRouteRef } from '@backstage/core-plugin-api';
+import {useApi, configApiRef, useRouteRef, fetchApiRef} from '@backstage/core-plugin-api';
 import Launch from '@material-ui/icons/Launch';
 import { useEntity } from '@backstage/plugin-catalog-react';
 import { TEAMCITY_ANNOTATION } from '../../routes';
@@ -113,10 +113,11 @@ export const DenseTable = ({ builds }: DenseTableProps) => {
 export const TeamcityTableComponent = () => {
   const { entity } = useEntity();
   const config = useApi(configApiRef);
+  const fetchApi = useApi(fetchApiRef);
   const { value, loading, error } = useAsync(async (): Promise<BuildType[]> => {
     const backendUrl = config.getString('backend.baseUrl');
     const fieldsQuery = 'buildType(id,name,webUrl,builds($locator(running:false,count:1),build(id,number,status,statusText,branchName,revisions(revision(version,vcsBranchName,vcs-root-instance)),startDate,finishDate)))';
-    const response = await fetch(`${backendUrl}/api/proxy/teamcity-proxy/app/rest/buildTypes?locator=affectedProject:(id:${entity.metadata.annotations?.[TEAMCITY_ANNOTATION]})&fields=${fieldsQuery}`);
+    const response = await fetchApi.fetch(`${backendUrl}/api/proxy/teamcity-proxy/app/rest/buildTypes?locator=affectedProject:(id:${entity.metadata.annotations?.[TEAMCITY_ANNOTATION]})&fields=${fieldsQuery}`);
     const data = await response.json();
 
     return data.buildType;

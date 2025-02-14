@@ -9,7 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { buildLogsRouteRef } from '../../plugin';
 import { Breadcrumbs, Content, Link, Progress } from '@backstage/core-components';
 import Alert from '@material-ui/lab/Alert';
-import { useApi, configApiRef, useRouteRefParams } from '@backstage/core-plugin-api';
+import {useApi, configApiRef, useRouteRefParams, fetchApiRef} from '@backstage/core-plugin-api';
 import useAsync from 'react-use/lib/useAsync';
 
 const useStyles = makeStyles({
@@ -27,9 +27,10 @@ const TeamcityLogPage = () => {
   const classes = useStyles();
   const { buildName, buildId, buildRunId } = useRouteRefParams(buildLogsRouteRef);
   const config = useApi(configApiRef);
+  const fetchApi = useApi(fetchApiRef);
   const { value, loading, error } = useAsync(async (): Promise<string> => {
     const backendUrl = config.getString('backend.baseUrl');
-    const response = await fetch(`${backendUrl}/api/proxy/teamcity-proxy/downloadBuildLog.html?buildId=${buildRunId}`);
+    const response = await fetchApi.fetch(`${backendUrl}/api/proxy/teamcity-proxy/downloadBuildLog.html?buildId=${buildRunId}`);
     const data = await response.text();
 
     return data;
