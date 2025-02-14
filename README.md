@@ -1,6 +1,3 @@
-![Test Workflow](https://github.com/Weyn/backstage-teamcity/actions/workflows/main.yml/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/Weyn/backstage-teamcity/badge.svg?branch=main)](https://coveralls.io/github/Weyn/backstage-teamcity?branch=main)
-
 # Backstage teamcity plugin
 
 Welcome to the teamcity plugin for Backstage!
@@ -43,9 +40,9 @@ proxy:
 ```
 
 # Screenshots
-![error](https://github.com/Weyn/backstage-teamcity/blob/main/assets/sample.jpg)
-![error](https://github.com/Weyn/backstage-teamcity/blob/main/assets/history.jpg)
-![error](https://github.com/Weyn/backstage-teamcity/blob/main/assets/log.jpg)
+![error](https://github.com/stakeholderit/backstage-teamcity/blob/main/assets/sample.jpg)
+![error](https://github.com/stakeholderit/backstage-teamcity/blob/main/assets/history.jpg)
+![error](https://github.com/stakeholderit/backstage-teamcity/blob/main/assets/log.jpg)
 
 # Developing
 
@@ -55,7 +52,3 @@ Run `yarn install`
 ## Running tests
 
 To run tests execute `yarn test a`
-
-# Future plans
-* More tests
-* Run button
