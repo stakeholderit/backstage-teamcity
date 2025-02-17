@@ -3,7 +3,6 @@ import { ThemeProvider } from '@material-ui/core';
 import { lightTheme } from '@backstage/theme';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-import { screen } from '@testing-library/react';
 import {
   setupRequestMockHandlers,
   renderInTestApp,
