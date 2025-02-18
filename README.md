@@ -5,7 +5,7 @@ Welcome to the teamcity plugin for Backstage!
 ## Getting started
 Install via yarn
 ```
-yarn add --cwd packages/app @stakeholderit/backstage-plugin-teamcity
+yarn --cwd packages/app add @stakeholderit/backstage-plugin-teamcity
 ```
 
 In: packages\app\src\components\catalog\EntityPage.tsx file add:
