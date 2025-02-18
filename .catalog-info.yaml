@@ -4,7 +4,7 @@ metadata:
   name: Backstage-Teamcity
   annotations:
     github.com/project-slug: stakeholderit/backstage-teamcity
-    npm/package: "@stakeholderit/backstage-teamcity"
+    npm/package: "@stakeholderit/backstage-plugin-teamcity"
 spec:
   type: Library
   lifecycle: Production
