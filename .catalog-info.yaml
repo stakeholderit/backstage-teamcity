@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: Backstage-Teamcity
+  annotations:
+    github.com/project-slug: stakeholderit/backstage-teamcity
+    npm/package: @stakeholderit/backstage-teamcity
+spec:
+  type: Library
+  lifecycle: Production
+  owner: Platform
