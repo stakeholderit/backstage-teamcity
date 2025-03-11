@@ -2,6 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: Backstage-Teamcity
+  time: Tolerate
   annotations:
     github.com/project-slug: stakeholderit/backstage-teamcity
     npm/package: "@stakeholderit/backstage-plugin-teamcity"
